@@ -1,6 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class distPrime {
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class distPrime {
 
     static int solve(int[] nums){
         int n = nums.length;
+        List<int[]> list = new ArrayList<>();
         HashSet<Integer> set = new HashSet<>();
 
         for(int i=0;i<n;i++){
