@@ -2,11 +2,23 @@ package leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class countPairs {
     public static void main(String[] args) {
-        String[] arr ={"aba","aabb","abcd","bac","aabc"};
-        System.out.println(solve(arr));
+        Scanner scr = new Scanner(System.in);
+        int t = scr.nextInt();
+
+        for(int  i =0;i<t;i++){
+            int n = scr.nextInt();
+            String[] arr = new String[n];
+            for(int j =0;j<n;j++){
+                arr[j] = scr.next();
+            }
+
+            solve(arr);
+        }
+
     }
 
     static int solve(String[] words){
