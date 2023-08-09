@@ -1,4 +1,4 @@
-package leetcode;
+package KumarK.DynamicProgramming;
 
 public class oddJourney {
     public static void main(String[] args) {
@@ -13,8 +13,8 @@ public class oddJourney {
         if(arr[0]%2==0){
             dp[1][0] = 1;
             dp[1][1] = 0;
-
         }
+
         else if(arr[0]%2==1){
             dp[1][0] = 0;
             dp[1][1] = 1;

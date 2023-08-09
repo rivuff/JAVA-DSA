@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class baje {
     public static void main(String[] args) {
        int[][] grid = {{1,2,3},{4,5,2},{3,4,1}};
@@ -27,5 +25,8 @@ public class baje {
         sum = Math.min(sumR, sumC);
 
         return sum;
+    }
+
+    public static class WordBreak {
     }
 }
