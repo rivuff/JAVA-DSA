@@ -29,10 +29,11 @@ public class palindomicSubstring {
 
         int len = 3;
 
+
         while(len<=3){
             int i = 0;
 
-            while(i<n-len +1){
+            while(i<n-len+1){
                 int j = i+len- 1;
 
                 if(arr[i] == arr[j] && dp[i+1][j-1] == 1){

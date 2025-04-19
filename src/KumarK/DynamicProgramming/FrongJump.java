@@ -29,6 +29,7 @@ public class FrongJump {
                     if(i-j>=0){
                         min = Math.min(min, (arr[i]-arr[i-j])+dp[i]);
                     }
+                    j++;
                 }
 
                 arr[i] = min;

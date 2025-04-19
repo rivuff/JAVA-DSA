@@ -11,48 +11,47 @@ public class mergeSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    static void mergeSort(int[] arr, int low, int high){
-        if(low>=high) return;
-        int mid = low+ (high-low)/2;
+    static void mergeSort(int[] arr, int start, int end){
+        if(start>=end){
+            return;
+        }
 
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid+1, high);
-        merge(arr, low, mid, high);
+        int mid = (start+end)/2;
+
+        mergeSort(arr, start, mid);
+        mergeSort(arr, mid+1, end);
+        merge(arr, start, mid, end);
     }
 
-    private static void merge(int[] arr, int low, int mid, int high) {
-        ArrayList<Integer> temp = new ArrayList<>(); // temporary array
-        int left = low;      // starting index of left half of arr
-        int right = mid + 1;   // starting index of right half of arr
+    static void merge(int[] arr, int start, int mid, int end){
+        ArrayList<Integer> list = new ArrayList<>();
+        int left = start;
+        int right = mid+1;
 
-
-        while (left <= mid && right <= high) {
-            if (arr[left] <= arr[right]) {
-                temp.add(arr[left]);
+        while(left<=mid && right<=end){
+            if(arr[left]<arr[right]){
+                list.add(arr[left]);
                 left++;
-            } else {
-                temp.add(arr[right]);
+            }else {
+                list.add(arr[right]);
                 right++;
             }
         }
 
-        // if elements on the left half are still left //
-
-        while (left <= mid) {
-            temp.add(arr[left]);
+        while (left<=mid){
+            list.add(arr[left]);
             left++;
         }
 
-        //  if elements on the right half are still left //
-        while (right <= high) {
-            temp.add(arr[right]);
+        while (right<=end){
+            list.add(arr[right]);
             right++;
         }
 
-        // transferring all elements from temporary to arr //
-        for (int i = low; i <= high; i++) {
-            arr[i] = temp.get(i - low);
+        for(int i = start;i<=end;i++){
+            arr[i] = list.get(i-start);
         }
     }
+
 
 }
